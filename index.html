@@ -1,28 +1,11 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Barcodes</title>
+  <title>Xor Center — Barcodes</title>
   <link rel="stylesheet" href="index.css">
 </head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
 <body>
   <div class="container" role="main">
     <header>
@@ -35,39 +18,26 @@
 
     <section class="grid" aria-label="barcode grid">
 
-<!-- Wi-Fi -->
-<article class="card" id="card-wifi">
-  <div class="barcode-wrap">
-    <!-- Link to the Wi-Fi configuration file -->
-    <a href="XorWiFi.mobileconfig" download>
-      <img src="wifi.png" alt="Wi-Fi QR code" class="barcode" id="img-wifi" loading="lazy">
-    </a>
-    <!-- optional small icon under QR -->
-    <img src="wifi.png" alt="Wi-Fi icon" class="icon">
-  </div>
-  <div class="meta">
-    <div class="platform">Wi-Fi</div>
-    <div class="title">Xor Center 2.4</div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-</article>
-
-
-
-
+      <!-- Wi-Fi (iOS only) -->
+      <article class="card wifi-card" id="card-wifi">
+        <div class="barcode-wrap">
+          <div class="platform">Wi-Fi</div>
+          <!-- iOS: Tap to install -->
+          <a class="button" href="XorWiFi.mobileconfig" download>
+            Install Wi-Fi Profile (iOS)
+          </a>
+          <img src="wifi.png" alt="Wi-Fi icon" class="icon">
+        </div>
+        <div class="meta">
+          <div class="title">Xor Center 2.4</div>
+          <p class="note">Open on iPhone/iPad and tap to connect. Password: dana2525</p>
+        </div>
+      </article>
 
       <!-- Telegram -->
       <article class="card" id="card-telegram">
         <div class="barcode-wrap">
+          <div class="platform">Telegram</div>
           <a href="https://t.me/xorcomputer" target="_blank">
             <img src="telegram.png" alt="Telegram QR" class="barcode">
           </a>
@@ -80,6 +50,7 @@
       <!-- Viber -->
       <article class="card" id="card-viber">
         <div class="barcode-wrap">
+          <div class="platform">Viber</div>
           <a href="viber://chat?number=%2B9647709264215">
             <img src="viber.png" alt="Viber QR" class="barcode">
           </a>
@@ -92,6 +63,7 @@
       <!-- WhatsApp -->
       <article class="card" id="card-whatsapp">
         <div class="barcode-wrap">
+          <div class="platform">WhatsApp</div>
           <a href="https://wa.me/9647709264215" target="_blank">
             <img src="whatsapp.png" alt="WhatsApp QR" class="barcode">
           </a>
@@ -104,8 +76,9 @@
       <!-- Call -->
       <article class="card" id="card-call">
         <div class="barcode-wrap">
+          <div class="platform">Call</div>
           <a href="tel:07709264215">
-            <img src="call.png" alt="Call QR code" class="barcode" id="img-call" loading="lazy">
+            <img src="call.png" alt="Call QR" class="barcode" loading="lazy">
           </a>
         </div>
         <div class="meta">
