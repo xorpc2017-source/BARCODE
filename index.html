@@ -1,88 +1,84 @@
-
 <!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>My Barcodes — Wi-Fi • Telegram • Viber • WhatsApp</title>
-<link rel="stylesheet" href="index.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Barcodes — Wi-Fi • Telegram • Viber • WhatsApp • Call</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div class="container" role="main">
-<header>
-<div class="logo">QR</div>
-<div>
-<h1>Barcodes / QR codes</h1>
-<p class="lead">Wi-Fi • Telegram • Viber • WhatsApp</p>
-</div>
-</header>
+  <div class="container" role="main">
+    <header>
+      <div class="logo">QR</div>
+      <div>
+        <h1>Barcodes / QR codes</h1>
+        <p class="lead">Wi-Fi • Telegram • Viber • WhatsApp • Call</p>
+      </div>
+    </header>
 
+    <section class="grid" aria-label="barcode grid">
 
-<section class="grid" aria-label="barcode grid">
+      <!-- Wi-Fi -->
+      <article class="card" id="card-wifi">
+        <div class="barcode-wrap">
+          <img src="wifi.png" alt="Wi-Fi QR code" class="barcode" id="img-wifi" loading="lazy">
+        </div>
+        <div class="meta">
+          <div class="title">Wi-Fi</div>
+        </div>
+      </article>
 
+      <!-- Telegram -->
+      <article class="card" id="card-telegram">
+        <div class="barcode-wrap">
+          <a href="https://t.me/xorcomputer" target="_blank">
+            <img src="telegram.png" alt="Telegram QR" class="barcode">
+          </a>
+        </div>
+        <div class="meta">
+          <div class="title">Telegram</div>
+        </div>
+      </article>
 
-<article class="card" id="card-wifi">
-<div class="barcode-wrap">
-<img src="wifi.png" alt="Wi-Fi QR code" class="barcode" id="img-wifi" loading="lazy">
-</div>
-<div class="meta">
-<div>
-<div class="title">Wi-Fi</div>
+      <!-- Viber -->
+      <article class="card" id="card-viber">
+        <div class="barcode-wrap">
+          <a href="viber://chat?number=%2B9647709264215">
+            <img src="viber.png" alt="Viber QR" class="barcode">
+          </a>
+        </div>
+        <div class="meta">
+          <div class="title">Viber</div>
+        </div>
+      </article>
 
+      <!-- WhatsApp -->
+      <article class="card" id="card-whatsapp">
+        <div class="barcode-wrap">
+          <a href="https://wa.me/9647709264215" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp QR" class="barcode">
+          </a>
+        </div>
+        <div class="meta">
+          <div class="title">WhatsApp</div>
+        </div>
+      </article>
 
-</article>
+      <!-- Call -->
+      <article class="card" id="card-call">
+        <div class="barcode-wrap">
+          <a href="tel:07709264215">
+            <img src="call.png" alt="Call QR code" class="barcode" id="img-call" loading="lazy">
+          </a>
+        </div>
+        <div class="meta">
+          <div class="title">Call</div>
+          <p>07709264215</p>
+        </div>
+      </article>
 
-
-<article class="card" id="card-telegram">
-<div class="barcode-wrap">
-<a href="https://t.me/xorcomputer" target="_blank"><img src="telegram.png" alt="Telegram QR" class="barcode"></a>
-</div>
-<div class="meta">
-<div>
-<div class="title">Telegram</div>
-</div>
-</article>
-
-
-<article class="card" id="card-viber">
-<div class="barcode-wrap">
-<a href="viber://chat?number=%2B9647709264215"><img src="viber.png" alt="Viber QR" class="barcode"></a>
-</div>
-<div class="meta">
-<div>
-<div class="title">Viber</div>
-
-
-</div>
-</article>
-
-
-<article class="card" id="card-whatsapp">
-
-
-<a href="https://wa.me/9647709264215" target="_blank"><img src="whatsapp.png" alt="WhatsApp QR" class="barcode"></a>
-<div class="barcode-wrap">
-</div>
-<div class="meta">
-<div>
-<div class="title">WhatsApp</div>
-
-
-
-
-<article class="card" id="card-call">
-  <div class="barcode-wrap">
-    <a href="tel:07709264215">
-      <img src="call.png" alt="Call QR code" class="barcode" id="img-call" loading="lazy">
-    </a>
+    </section>
   </div>
-  <div class="meta">
-    <div class="title">Call</div>
-    <p>07709264215</p>
-  </div>
-</article>
-
-
-
+</body>
 </html>
