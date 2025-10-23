@@ -7,6 +7,22 @@
   <title>Barcodes</title>
   <link rel="stylesheet" href="index.css">
 </head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
 <body>
   <div class="container" role="main">
     <header>
@@ -19,15 +35,22 @@
 
     <section class="grid" aria-label="barcode grid">
 
-      <!-- Wi-Fi -->
-      <article class="card" id="card-wifi">
-        <div class="barcode-wrap">
-          <img src="wifi.png" alt="Wi-Fi QR code" class="barcode" id="img-wifi" loading="lazy">
-        </div>
-        <div class="meta">
-          <div class="title">Wi-Fi</div>
-        </div>
-      </article>
+<!-- Wi-Fi -->
+<article class="card" id="card-wifi">
+  <div class="barcode-wrap">
+    <!-- Link to the Wi-Fi configuration file -->
+    <a href="XorWiFi.mobileconfig" download>
+      <img src="wifi.png" alt="Wi-Fi QR code" class="barcode" id="img-wifi" loading="lazy">
+    </a>
+    <!-- optional small icon under QR -->
+    <img src="wifi.png" alt="Wi-Fi icon" class="icon">
+  </div>
+  <div class="meta">
+    <div class="platform">Wi-Fi</div>
+    <div class="title">Xor Center 2.4</div>
+  </div>
+</article>
+
 
 
 
