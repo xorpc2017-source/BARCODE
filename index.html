@@ -153,7 +153,15 @@ color: #000000; /* black */
         <img src="phone.png" alt="Call">
       </a>
     </div>
-    <footer>© 2025 Xor Center</footer>
+<footer>© <span id="year"></span> Xor Center</footer>
+
+<script>
+  // Get the current year
+  const currentYear = new Date().getFullYear();
+  // Set it inside the span
+  document.getElementById('year').textContent = currentYear;
+</script>
+
   </main>
 </body>
 </html>
