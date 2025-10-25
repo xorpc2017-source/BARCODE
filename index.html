@@ -1,167 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xor Center</title>
-  <style>
-    :root {
---text: #ffeb3b; /* bright yellow */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xor Center</title>
+<style>
 
-      --bg1: #0d1117;
-      --bg2: #1a1f2e;
-      --accent: #008080; /* dark teal */
---card: rgba(255, 165, 0, 0.8);
-      --radius: 22px;
-      --shadow: 0 0 40px rgba(0, 128, 128, 0.25);
-    }
+:root {
+  --text: #ffeb3b; 
+  --bg1: #0d1117;
+  --bg2: #1a1f2e;
+  --accent: #008080; 
+  --card: rgba(255, 165, 0, 0.8);
+  --radius: 30px;
+  --shadow: 0 0 25px rgba(0,0,0,0.2);
+}
 
-    * {
-      box-sizing: border-box;
-      transition: all 0.25s ease;
-    }
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  background: url("backg.jpg") center/cover no-repeat;
+  display: flex;
+ background-size: 800px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-    body {
-      margin: 20px;
-      padding: 20px;
-      font-family: "Poppins", system-ui, sans-serif;
-  font-weight: 700; /* bold */
-      color: var(--text);
-      background: radial-gradient(circle at 70% 30%, #000, #0b0f16 70%);
-      overflow: hidden;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  background-image: url("backg.jpg");
- background-size: 200%; /* makes it bigger */
-  background-repeat: no-repeat;
-  background-position: center;
-    }
+body::before, body::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,128,128,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: aura 12s infinite ease-in-out alternate;
+  filter: blur(40px);
+  will-change: transform;
+}
 
-    body::before, body::after {
-      content: "";
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(0,128,128,0.12) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: aura 12s infinite ease-in-out alternate;
-      filter: blur(100px);
-    }
+body::before { top: -150px; left: -150px; }
+body::after { bottom: -150px; right: -150px; animation-delay: 6s; }
 
-    body::before { top: -200px; left: -200px; }
-    body::after { bottom: -200px; right: -200px; animation-delay: 6s; }
+@keyframes aura {
+  from { transform: scale(1) translate(0,0); opacity:0.6; }
+  to { transform: scale(1.1) translate(30px,30px); opacity:1; }
+}
 
-    @keyframes aura {
-      from { transform: scale(1) translate(0, 0); opacity: 0.6; }
-      to { transform: scale(1.2) translate(50px, 50px); opacity: 1; }
-    }
+.card {
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  border: 7px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 300px;
+  z-index: 10;
+  position: relative;
+  animation: fadeIn 1s ease forwards, glowPulse 3s infinite alternate;
+  will-change: transform, box-shadow;
+box-shadow: 10px 40px 30px rgba(255,255,255,0.6);
+}
 
-    .card {
-      background: var(--card);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 50px 35px;
-      text-align: center;
-      width: 90%;
-      max-width: 420px;
-      z-index: 10;
-      position: relative;
-      animation: fadeIn 1s ease forwards, glowPulse 3s infinite ease-in-out alternate;
-    }
+@keyframes glowPulse {
+  from { box-shadow: 0 0 15px rgba(0,128,128,0.2); }
+  to { box-shadow: 0 0 30px rgba(0,128,128,0.4); }
+}
 
-    @keyframes glowPulse {
-      from { box-shadow: 0 0 25px rgba(0,128,128,0.2); }
-      to { box-shadow: 0 0 50px rgba(0,128,128,0.4); }
-    }
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+  text-shadow: 0 0 15px rgba(0,128,128,0.3);
+}
 
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-color: #000000; /* black */
-      text-shadow: 0 0 25px rgba(0,128,128,0.3);
-    }
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000;
+}
 
-    h3 {
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 30px;
-  font-weight: 700; /* bold */
-     color: #000000; /* black */
-    }
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 
-    .icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-    }
+}
 
-    .icon {
-      display: inline-block;
-      border-radius: 18px;
-      background: rgba(20, 25, 35, 0.8);
-      box-shadow: 0 8px 20px rgba(0,128,128,0.15);
-      padding: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.icon {
+  display: inline-block;
+  border-radius: 18px;
+  background: rgba(20,25,35,0.8);
+  box-shadow: 0 5px 15px rgba(0,128,128,0.15);
+  padding: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform, box-shadow;
+}
 
-    .icon img {
-      width: 65px;
-      height: 65px;
-      border-radius: 16px;
-    }
+.icon img {
+  width: 65px;
+  height: 65px;
+  border-radius: 16px;
+}
 
-    .icon:hover {
-      transform: translateY(-8px) scale(1.1);
-      box-shadow: 0 0 30px rgba(0,128,128,0.45);
-    }
+.icon:hover {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 0 20px rgba(0,128,128,0.35);
+}
 
-    footer {
-      margin-top: 35px;
-      font-size: 0.9rem;
-      opacity: 0.75;
-      letter-spacing: 0.4px;
-  color: #ffffff; /* white */
-    }
+footer {
+  margin-top: 35px;
+  font-size: 0.9rem;
+  opacity: 0.75;
+  letter-spacing: 0.4px;
+  color: #0d47a1;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+@keyframes glowPulse {
+  from { box-shadow: 10x 10px 50px rgba(255,255,255,0.3); }
+  to   { box-shadow: 10px 40px 30px rgba(255,255,255,0.6); }
+}
+</style>
 </head>
 <body>
-  <main class="card">
-    <h1>Xor Center</h1>
-    <h3>بۆ خزمەتگوزاری مۆبایل و کۆمپیوتەر</h3>
-    <div class="icons">
-      <a href="viber://chat?number=%2B9647709264215" class="icon">
-        <img src="viber.png" alt="Viber">
-      </a>
-      <a href="https://t.me/xorcomputer" class="icon">
-        <img src="telegram.png" alt="Telegram">
-      </a>
-      <a href="https://wa.me/9647709264215" class="icon">
-        <img src="whatsapp.png" alt="WhatsApp">
-      </a>
-      <a href="tel:07709264215" class="icon">
-        <img src="phone.png" alt="Call">
-      </a>
-    </div>
-<footer>© <span id="year"></span> Xor Center</footer>
-
-<script>
-  // Get the current year
-  const currentYear = new Date().getFullYear();
-  // Set it inside the span
-  document.getElementById('year').textContent = currentYear;
-</script>
-
-  </main>
+<main class="card">
+  <h1>Xor Center</h1>
+  <h3>بۆ خزمەتگوزاری مۆبایل و کۆمپیوتەر</h3>
+  <div class="icons">
+    <a href="viber://chat?number=%2B9647709264215" class="icon"><img src="viber.png" alt="Viber"></a>
+    <a href="https://t.me/xorcomputer" class="icon"><img src="telegram.png" alt="Telegram"></a>
+    <a href="https://wa.me/9647709264215" class="icon"><img src="whatsapp.png" alt="WhatsApp"></a>
+    <a href="tel:07709264215" class="icon"><img src="phone.png" alt="Call"></a>
+  </div>
+  <footer>© <span id="year"></span> Xor Center</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</main>
 </body>
 </html>
