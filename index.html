@@ -6,11 +6,12 @@
   <title>Xor Center</title>
   <style>
     :root {
+--text: #ffeb3b; /* bright yellow */
+
       --bg1: #0d1117;
       --bg2: #1a1f2e;
       --accent: #008080; /* dark teal */
-      --card: rgba(20, 25, 35, 0.8);
-      --text: #e6edf3;
+--card: rgba(255, 165, 0, 0.8);
       --radius: 22px;
       --shadow: 0 0 40px rgba(0, 128, 128, 0.25);
     }
@@ -21,23 +22,28 @@
     }
 
     body {
-      margin: 0;
-      padding: 0;
+      margin: 20px;
+      padding: 20px;
       font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700; /* bold */
       color: var(--text);
-      background: radial-gradient(circle at 20% 30%, #101520, #0b0f16 70%);
+      background: radial-gradient(circle at 70% 30%, #000, #0b0f16 70%);
       overflow: hidden;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+  background-image: url("backg.jpg");
+ background-size: 200%; /* makes it bigger */
+  background-repeat: no-repeat;
+  background-position: center;
     }
 
     body::before, body::after {
       content: "";
       position: absolute;
-      width: 800px;
-      height: 800px;
+      width: 400px;
+      height: 400px;
       background: radial-gradient(circle, rgba(0,128,128,0.12) 0%, transparent 70%);
       border-radius: 50%;
       animation: aura 12s infinite ease-in-out alternate;
@@ -76,7 +82,7 @@
       font-size: 1.8rem;
       font-weight: 600;
       margin-bottom: 8px;
-      color: var(--accent);
+color: #000000; /* black */
       text-shadow: 0 0 25px rgba(0,128,128,0.3);
     }
 
@@ -84,7 +90,8 @@
       font-size: 1rem;
       font-weight: 400;
       margin-bottom: 30px;
-      color: #a0cfcf; /* subtle lighter teal */
+  font-weight: 700; /* bold */
+     color: #000000; /* black */
     }
 
     .icons {
@@ -119,6 +126,7 @@
       font-size: 0.9rem;
       opacity: 0.75;
       letter-spacing: 0.4px;
+  color: #ffffff; /* white */
     }
 
     @keyframes fadeIn {
@@ -130,12 +138,12 @@
 <body>
   <main class="card">
     <h1>Xor Center</h1>
-    <h3>خزمەتگوزاری مۆبایل و بەردەستە</h3>
+    <h3>بۆ خزمەتگوزاری مۆبایل و کۆمپیوتەر</h3>
     <div class="icons">
       <a href="viber://chat?number=%2B9647709264215" class="icon">
         <img src="viber.png" alt="Viber">
       </a>
-      <a href="https://web.telegram.org/" class="icon">
+      <a href="https://t.me/xorcomputer" class="icon">
         <img src="telegram.png" alt="Telegram">
       </a>
       <a href="https://wa.me/9647709264215" class="icon">
@@ -149,4 +157,3 @@
   </main>
 </body>
 </html>
-
