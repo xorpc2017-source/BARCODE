@@ -26,10 +26,11 @@ html, body {
   color: var(--text);
   background: url("backg.jpg") center/cover no-repeat;
   display: flex;
- background-size: 800px;
+  background-size: 800px;
   justify-content: center;
   align-items: center;
   position: relative;
+  --radius: 30px;
 }
 
 body::before, body::after {
@@ -52,7 +53,6 @@ body::after { bottom: -150px; right: -150px; animation-delay: 6s; }
   to { transform: scale(1.1) translate(30px,30px); opacity:1; }
 }
 
-
 .card {
   background: var(--card);
   border-radius: var(--radius);
@@ -62,10 +62,9 @@ body::after { bottom: -150px; right: -150px; animation-delay: 6s; }
   max-width: 300px;
   position: relative;
   z-index: 10;
-  box-shadow: 0 0 20px 5px rgba(226, 60, 63, 0.3); /* initial glow all around */
-  animation: fadeIn 1s ease forwards, glowPulse 3s infinite alternate;
+  animation: fadeIn 1s ease forwards, rainbowGlow 3.5s infinite linear;
+  --radius: 30px;
 }
-
 
 h1 {
   font-size: 1.8rem;
@@ -87,7 +86,6 @@ h3 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
-
 }
 
 .icon {
@@ -118,16 +116,19 @@ footer {
   letter-spacing: 0.4px;
   color: #0d47a1;
 }
-@keyframes glowPulse {
-  from { 
-    box-shadow: 0 0 20px 5px rgba(226, 60, 63, 0.3); 
-  }
-  to { 
-    box-shadow: 0 0 40px 15px rgba(226, 60, 63, 0.6); 
-  }
+
+/* New 7-color rainbow glow */
+@keyframes rainbowGlow {
+  0%   { box-shadow: 0 0 25px 5px red; }
+  14%  { box-shadow: 0 0 25px 5px orange; }
+  28%  { box-shadow: 0 0 25px 5px yellow; }
+  42%  { box-shadow: 0 0 25px 5px green; }
+  57%  { box-shadow: 0 0 25px 5px cyan; }
+  71%  { box-shadow: 0 0 25px 5px blue; }
+  85%  { box-shadow: 0 0 25px 5px purple; }
+  100% { box-shadow: 0 0 25px 5px red; }
+  --radius: 30px;
 }
-
-
 
 </style>
 </head>
