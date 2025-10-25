@@ -52,27 +52,20 @@ body::after { bottom: -150px; right: -150px; animation-delay: 6s; }
   to { transform: scale(1.1) translate(30px,30px); opacity:1; }
 }
 
+
 .card {
   background: var(--card);
-  backdrop-filter: blur(18px);
-  border: 7px solid rgba(255,255,255,0.08);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   padding: 30px 15px;
   text-align: center;
   width: 90%;
   max-width: 300px;
-  z-index: 10;
   position: relative;
+  z-index: 10;
+  box-shadow: 0 0 20px 5px rgba(226, 60, 63, 0.3); /* initial glow all around */
   animation: fadeIn 1s ease forwards, glowPulse 3s infinite alternate;
-  will-change: transform, box-shadow;
-box-shadow: 10px 40px 30px rgba(255,255,255,0.6);
 }
 
-@keyframes glowPulse {
-  from { box-shadow: 0 0 15px rgba(0,128,128,0.2); }
-  to { box-shadow: 0 0 30px rgba(0,128,128,0.4); }
-}
 
 h1 {
   font-size: 1.8rem;
@@ -125,11 +118,17 @@ footer {
   letter-spacing: 0.4px;
   color: #0d47a1;
 }
-
 @keyframes glowPulse {
-  from { box-shadow: 10x 10px 50px rgba(255,255,255,0.3); }
-  to   { box-shadow: 10px 40px 30px rgba(255,255,255,0.6); }
+  from { 
+    box-shadow: 0 0 20px 5px rgba(226, 60, 63, 0.3); 
+  }
+  to { 
+    box-shadow: 0 0 40px 15px rgba(226, 60, 63, 0.6); 
+  }
 }
+
+
+
 </style>
 </head>
 <body>
